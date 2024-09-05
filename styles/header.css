@@ -1,0 +1,16 @@
+#primary {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 2rem;
+
+    .primary-menu {
+        display: flex;
+        gap: .5rem;
+    }
+}
+
+#secondary {
+    justify-content: space-between;
+    padding: 0.875rem 2rem;
+    border-block: 1px solid var(--stroke-color);
+}

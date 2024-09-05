@@ -112,3 +112,20 @@ aside {
         border-radius: .25rem;
     }
 }
+
+#see-also {
+    margin-top: 2rem;
+
+    img {
+        width: 4.5rem;
+        aspect-ratio: 1/1;
+    }
+}
+
+#more-articles {
+    margin-top: .8rem;
+
+    .tag {
+        margin-bottom: .5rem;
+    }
+}

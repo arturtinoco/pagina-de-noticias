@@ -43,3 +43,21 @@ a:hover {
     max-width: 80rem;
     margin-inline: auto;
 }
+
+main {
+    grid-template-areas: 
+    "spotlight spotlight"
+    "weekly-pop weekly-pop"
+    "ai aside";
+
+    grid-template-columns: 2fr 1.4fr;
+
+    row-gap: 5rem;
+    column-gap: 2rem;
+    padding-inline: 2rem;
+    margin-block: 2.5rem;
+}
+
+img {
+    width: 100%;
+}

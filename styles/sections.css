@@ -1,3 +1,27 @@
+section header {
+    align-items: start;
+    align-self: start;
+    color: var(--text-color-secondary);
+    border-top: 1px solid var(--stroke-color);
+    padding-top: .75rem;
+
+    a {
+        justify-content: end;
+        align-items: center;
+        gap: .25rem;
+
+        span {
+            background-image: url(../assets/icons/ArrowRight.svg);
+            width: 1rem;
+            height: 1rem;
+        }
+
+        &:hover span {
+            background-image: url(../assets/icons/ArrowRightHover.svg);
+        }
+    }
+}
+
 #spotlight {
     grid-area: spotlight;
     img {
@@ -33,4 +57,32 @@
         }
     }
 
+}
+
+#weekly-pop {
+    grid-area: weekly-pop;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    &>div {
+        grid-template-columns: repeat(4, 18.25rem);
+    }
+
+    img {
+        height: 10rem;
+    }
+
+    figure {
+        position: relative;
+    }
+
+    .tag {
+        position: absolute;
+        left: .5rem;
+        top: .5rem;
+    }
+
+    h2 {
+        margin-top: .5rem;
+    }
 }

@@ -2,7 +2,7 @@
   
 Projeto desenvolvido durante a Formação Full-Stack promovida pela Rocketseat.  
   
-## Layout direcionado para páginas com grande diversidade de artigos/temas
+## 🖺 Layout direcionado para páginas com grande diversidade de artigos/temas
   
 ![Demonstração do Portal de Notícias](.gitconfig/portal-de-noticias-preview.gif)
 

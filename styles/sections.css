@@ -102,3 +102,13 @@ section header {
         margin-block: .5rem .25rem;
     }
 }
+
+aside {
+    grid-area: aside;
+}
+
+#ads {
+    img {
+        border-radius: .25rem;
+    }
+}

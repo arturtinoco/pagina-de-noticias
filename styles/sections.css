@@ -86,3 +86,19 @@ section header {
         margin-top: .5rem;
     }
 }
+
+#ai {
+    align-self: self-start;
+    grid-area: ai;
+    gap: 1.5rem;
+
+    img {
+        width: 11rem;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+
+    h2 {
+        margin-block: .5rem .25rem;
+    }
+}

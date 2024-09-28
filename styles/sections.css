@@ -1,4 +1,5 @@
-section header {
+section header,
+aside header {
     justify-content: space-between;
     width: 100%;
     color: var(--text-color-secondary);
@@ -157,5 +158,30 @@ section header {
         border-radius: .25rem;
         object-fit: cover;
         z-index: 0;
+    }
+}
+
+#extra {
+    width: 100%;
+    gap: 1.5rem;
+
+    & div {
+        flex-direction: column;
+
+        & figure {
+
+            & img {
+                width: 4.5rem;
+                height: 4.5rem;
+            }
+
+            & figcaption {
+                height: 100%;
+
+                & h3 {
+                    height: 2.5rem;
+                }
+            }
+        }
     }
 }

@@ -138,3 +138,24 @@ section header {
         }
     }
 }
+
+#ads {
+    width: 100%;
+    position: relative;
+
+    & img:nth-child(1) {
+        position: absolute;
+        left: calc(100% - 1.75rem);
+        top: .5rem;
+        z-index: 1;
+    }
+
+    & img:nth-child(2) {
+        position: relative;
+        width: 100%;
+        height: 11.75rem;
+        border-radius: .25rem;
+        object-fit: cover;
+        z-index: 0;
+    }
+}

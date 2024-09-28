@@ -22,3 +22,21 @@
     padding: 0;
     margin: 0;
 }
+
+body {
+    background-color: var(--bg-color);
+    font: var(--text);
+    color: var(--text-color-primary);
+    padding-bottom: 2.5rem;
+}
+
+.container {
+    max-width: 44.5rem;
+}
+
+a {
+    font: var(--span);
+    color: var(--text-color-secondary);
+    text-decoration: none;
+    text-wrap: nowrap;
+}

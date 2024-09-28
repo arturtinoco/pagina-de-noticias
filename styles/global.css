@@ -31,7 +31,8 @@ body {
 }
 
 .container {
-    width: 22.5rem;
+    min-width: 22.5rem;
+    margin-inline: auto;
 }
 
 a {

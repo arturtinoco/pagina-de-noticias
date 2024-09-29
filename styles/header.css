@@ -10,11 +10,16 @@
         & strong:hover {
             color: var(--brand-color-light);
         }
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     & > img {
         width: 6.25rem;
         height: 1.25rem;
+        cursor: pointer;
     }
 }
 

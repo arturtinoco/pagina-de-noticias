@@ -33,21 +33,21 @@ aside header {
 #spotlight {
     width: 100%;
 
-    & .card {
+    & .featured {
         position: relative;
         width: 100%;
-        height: 12.5rem;
+        height: 26rem;
         cursor: pointer;
 
         &::before {
             content: '';
             position: absolute;
             inset: 0;
-            top: 0%;
+            top: 50%;
             background-image: linear-gradient(180deg, transparent 0%, #020617 100%);
             border-radius: .25rem;
         }
-        
+
         & img {
             border-radius: .25rem;
             width: 100%;
@@ -55,27 +55,51 @@ aside header {
             object-fit: cover;
         }
 
-        &:nth-child(1) {
-            height: 26rem;
-
-            &::before {
-                top: 50%;
-            }
-            
-            & figcaption {
-                padding: 2rem 1rem 1rem;
-            }
-        }
-
-
         & figcaption {
             position: absolute;
             left: 0;
             bottom: 0;
-            padding: 2.25rem .75rem .75rem;
+            padding: 2rem 1rem 1rem;
 
             & h3 {
                 height: 3.75rem;
+            }
+        }
+    }
+
+    & div {
+
+        & .card {
+            position: relative;
+            width: 100%;
+            height: 12.5rem;
+            cursor: pointer;
+    
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                top: 0%;
+                background-image: linear-gradient(180deg, transparent 0%, #020617 100%);
+                border-radius: .25rem;
+            }
+            
+            & img {
+                border-radius: .25rem;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    
+            & figcaption {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                padding: 2.25rem .75rem .75rem;
+    
+                & h3 {
+                    height: 3.75rem;
+                }
             }
         }
     }

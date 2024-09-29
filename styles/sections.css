@@ -1,7 +1,10 @@
+/* Mobile first */
+
 section header,
 aside header {
     justify-content: space-between;
     width: 100%;
+    height: fit-content;
     color: var(--text-color-secondary);
     border-top: 1px solid var(--stroke-color);
     padding-top: .75rem;
@@ -53,6 +56,7 @@ aside header {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top;
         }
 
         & figcaption {
@@ -61,9 +65,13 @@ aside header {
             bottom: 0;
             padding: 2rem 1rem 1rem;
 
-            & h3 {
-                height: 3.75rem;
+            & h1 {
+                height: 100%;
             }
+
+            & .mobile-h1 { display: block; }
+
+            & .tablet-h1 { display: none; }
         }
     }
 
@@ -98,8 +106,12 @@ aside header {
                 padding: 2.25rem .75rem .75rem;
     
                 & h3 {
-                    height: 3.75rem;
+                    height: 100%;
                 }
+
+                & .mobile-h3 { display: block; }
+
+                & .tablet-h3 { display: none; }
             }
         }
     }
@@ -111,7 +123,7 @@ aside header {
     padding-bottom: 1.5rem;
 
     & div {
-        flex-direction: column;
+        grid-auto-flow: row;
         gap: 2rem;
 
         & figure {
@@ -129,12 +141,17 @@ aside header {
                 width: 100%;
                 height: 10rem;
                 object-fit: cover;
+                object-position: center;
                 margin-bottom: .5rem;
             }
 
             & h2 {
-                height: 4.125rem;
+                height: 100%;
             }
+
+            & .mobile-h2 { display: block; }
+
+            & .tablet-h2 { display: none; }
         }
     }
 }
@@ -165,54 +182,182 @@ aside header {
                 color: var(--text-color-secondary);
                 cursor: pointer;
             }
+
+            & .mobile-h2,
+            & .mobile-p { display: block; }
+
+            & .tablet-h2,
+            & .tablet-p { display: none; }
         }
     }
 }
 
-#ads {
-    justify-self: center;
-    width: 20.5rem;
-    position: relative;
-    cursor: pointer;
+#extra {
+    gap: 1.5rem;
+    width: 100%;
+    grid-auto-flow: row;
 
-    & img:nth-child(1) {
-        position: absolute;
-        left: calc(100% - 1.75rem);
-        top: .5rem;
-        z-index: 1;
+    & #ads {
+        grid-row: 1;
+        justify-self: center;
+        width: 20.5rem;
+        position: relative;
+        cursor: pointer;
+    
+        & img:nth-child(1) {
+            position: absolute;
+            left: calc(100% - 1.75rem);
+            top: .5rem;
+            z-index: 1;
+        }
+    
+        & img:nth-child(2) {
+            position: relative;
+            width: 100%;
+            height: 11.75rem;
+            border-radius: .25rem;
+            object-fit: cover;
+            z-index: 0;
+        }
     }
 
-    & img:nth-child(2) {
-        position: relative;
-        width: 100%;
-        height: 11.75rem;
-        border-radius: .25rem;
-        object-fit: cover;
-        z-index: 0;
+    & #articles {
+        grid-row: 2;
+        gap: 1.5rem;
+
+        & div {
+            flex-direction: column;
+    
+            & figure {
+    
+                & img {
+                    width: 4.5rem;
+                    height: 4.5rem;
+                    cursor: pointer;
+                }
+    
+                & figcaption {
+                    height: 100%;
+                    cursor: pointer;
+    
+                    & h3 {
+                        height: 2.5rem;
+                    }
+    
+                    & .mobile-h3 { display: block; }
+    
+                    & .tablet-h3 { display: none; }
+                }
+            }
+        }
     }
 }
 
-#extra {
-    width: 100%;
-    gap: 1.5rem;
+@media (width >= 37.5rem) { /* Tablet */
+    & main {
+        grid-template-areas: 
+        "spotlight spotlight"
+        "weekly-pop weekly-pop"
+        "ai-featured ai-featured"
+        "extra extra";
+    }
 
-    & div {
-        flex-direction: column;
+    & #spotlight {
+        grid-area: spotlight;
 
-        & figure {
-
-            & img {
-                width: 4.5rem;
-                height: 4.5rem;
-                cursor: pointer;
-            }
+        & .featured {
 
             & figcaption {
-                height: 100%;
-                cursor: pointer;
+                
+                & .mobile-h1 { display: none; }
 
-                & h3 {
-                    height: 2.5rem;
+                & .tablet-h1 { display: block; }
+            }
+        }
+
+        & div {
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, .5fr);
+
+            & .card {
+                height: 100%;
+
+                & img {
+                    object-fit: cover;
+                    object-position: top;
+                }
+            }
+        }
+    }
+
+    & #weekly-pop {
+        grid-area: weekly-pop;
+        justify-content: center;
+
+        & div {
+            
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+
+            & figure {
+                min-width: 18.25rem;
+                height: 100%;
+
+                & .mobile-h2 { display: none; }
+
+                & .tablet-h2 { display: block; }
+            }
+        }
+    }
+
+    & #ai-featured {
+        grid-area: ai-featured;
+
+        & div {
+
+            & article {
+
+                & img {
+                    width: 11rem;
+                    height: 11rem;
+                }
+                
+                & div {
+                    & .mobile-h2,
+                    & .mobile-p { display: none; }
+    
+                    & .tablet-h2,
+                    & .tablet-p { display: block; }
+                }
+            }
+        }
+    }
+
+    & #extra {
+        grid-area: extra;
+        grid-auto-flow: column;
+        justify-content: space-between;
+
+        & #ads {
+            justify-self: start;
+            grid-row: unset;
+            height: 11.75rem;
+        }
+    
+        & #articles {
+            grid-row: unset;
+            grid-auto-flow: row;
+
+            & div {
+    
+                & figure {
+
+                    & figcaption {
+
+                        & .mobile-h3 { display: none; }
+    
+                        & .tablet-h3 { display: block; }
+                    }
                 }
             }
         }

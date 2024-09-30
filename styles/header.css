@@ -34,3 +34,27 @@
         color: var(--brand-color-light);
     }
 }
+
+@media (width >= 37.5rem) {
+    & #primary {
+        padding: 1.25rem 2rem;
+        
+        & .menu-item {
+
+            & strong {
+                display: block;
+            }
+        }
+
+        & > img {
+            width: 10rem;
+            height: 2rem;
+        }
+    }
+
+    & #secondary {
+        padding: 0.875rem 2rem;
+        overflow-x: hidden;
+    }
+
+}

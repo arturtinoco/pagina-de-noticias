@@ -146,12 +146,14 @@ aside header {
             }
 
             & h2 {
-                height: 100%;
+                height: auto;
             }
 
             & .mobile-h2 { display: block; }
 
             & .tablet-h2 { display: none; }
+
+            & .desktop-h2 { display: none; }
         }
     }
 }
@@ -188,6 +190,9 @@ aside header {
 
             & .tablet-h2,
             & .tablet-p { display: none; }
+
+            & .desktop-h2,
+            & .desktop-p { display: none; }
         }
     }
 }
@@ -200,7 +205,7 @@ aside header {
     & #ads {
         grid-row: 1;
         justify-self: center;
-        width: 20.5rem;
+        min-width: 20.5rem;
         position: relative;
         cursor: pointer;
     
@@ -214,7 +219,7 @@ aside header {
         & img:nth-child(2) {
             position: relative;
             width: 100%;
-            height: 11.75rem;
+            height: auto;
             border-radius: .25rem;
             object-fit: cover;
             z-index: 0;
@@ -247,6 +252,8 @@ aside header {
                     & .mobile-h3 { display: block; }
     
                     & .tablet-h3 { display: none; }
+
+                    & .desktop-h3 { display: none; }
                 }
             }
         }
@@ -306,6 +313,8 @@ aside header {
                 & .mobile-h2 { display: none; }
 
                 & .tablet-h2 { display: block; }
+
+                & .desktop-h2 { display: none; }
             }
         }
     }
@@ -328,6 +337,9 @@ aside header {
     
                     & .tablet-h2,
                     & .tablet-p { display: block; }
+
+                    & .desktop-h2,
+                    & .desktop-p { display: none; }
                 }
             }
         }
@@ -341,12 +353,14 @@ aside header {
         & #ads {
             justify-self: start;
             grid-row: unset;
-            height: 11.75rem;
+            order: 2;
+            min-height: 11.75rem;
         }
     
         & #articles {
             grid-row: unset;
             grid-auto-flow: row;
+            order: 1;
 
             & div {
     
@@ -357,6 +371,103 @@ aside header {
                         & .mobile-h3 { display: none; }
     
                         & .tablet-h3 { display: block; }
+
+                        & .desktop-h3 { display: none; }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (width >= 80rem) {
+    & body {max-width: 80rem;}
+
+    & main {
+        grid-template-areas: 
+        "spotlight spotlight"
+        "weekly-pop weekly-pop"
+        "ai-featured extra";
+
+        row-gap: 5rem;
+        column-gap: 2rem;
+        padding: 2.5rem 2rem;
+    }
+
+    & #spotlight {
+        grid-auto-flow: column;
+
+        & div {
+            grid-template-columns: repeat(2, 1fr);
+
+            & .card {
+                height: 12.5rem;
+            }
+        }
+    }
+
+    & #weekly-pop {
+
+        & div {
+            grid-template-rows: none;
+            grid-template-columns: none;
+            grid-auto-flow: column;
+            gap: 1rem;
+
+            & figure {
+                & .mobile-h2 { display: none; }
+
+                & .tablet-h2 { display: none; }
+
+                & .desktop-h2 { display: block; }
+            }
+        }
+    }
+
+    & #ai-featured {
+        min-width: 43.5rem;
+
+        & div {
+
+            & article {
+                flex-direction: row-reverse;
+
+                & div {
+                    & .mobile-h2,
+                    & .mobile-p { display: none; }
+    
+                    & .tablet-h2,
+                    & .tablet-p { display: none; }
+
+                    & .desktop-h2,
+                    & .desktop-p { display: block; }
+                }
+            }
+        }
+    }
+
+    & #extra {
+        grid-auto-flow: row;
+        gap: 2rem;
+        min-width: 30.5rem;
+
+        & #ads {
+            order: 1;
+        }
+
+        & #articles {
+            order: 2;
+
+            & div {
+
+                & figure {
+
+                    & figcaption {
+                        & .mobile-h3 { display: none; }
+    
+                        & .tablet-h3 { display: none; }
+
+                        & .desktop-h3 { display: block; }
                     }
                 }
             }

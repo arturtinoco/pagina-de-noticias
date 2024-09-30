@@ -13,5 +13,6 @@ Projeto desenvolvido durante a Formação Full-Stack promovida pela Rocketseat.
 * Git
 * Figma
 * Notion  
+* Responsively App
   
 #### Você pode conferir o resultado clicando [aqui](https://arturtinoco.github.io/formacao-full-stack/projeto-portal-noticias) ou ver o projeto no [Figma](https://www.figma.com/community/file/1362166020452569562) feito por [Ilana Mallak](https://www.linkedin.com/in/ilanamallak/).  

@@ -35,7 +35,7 @@
     }
 }
 
-@media (width >= 37.5rem) {
+@media (width >= 37.5rem) { /* Tablet and Desktop*/
     & #primary {
         padding: 1.25rem 2rem;
         

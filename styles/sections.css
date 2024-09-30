@@ -380,7 +380,7 @@ aside header {
     }
 }
 
-@media (width >= 80rem) {
+@media (width >= 80rem) { /* Desktop */
     & body {max-width: 80rem;}
 
     & main {
